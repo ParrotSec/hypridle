@@ -1,0 +1,53 @@
+.TH HYPRIDLE 1 "July 2025" "hypridle" "User Commands"
+.SH NAME
+hypridle \- Idle daemon for Hyprland
+.SH SYNOPSIS
+.B hypridle
+[\fB\-c\fR \fIconfig_path\fR] [\fB\-q\fR|\fB\-\-quiet\fR] [\fB\-v\fR|\fB\-\-verbose\fR]
+.SH DESCRIPTION
+Hypridle is a lightweight and efficient Wayland idle daemon designed for the
+Hyprland compositor.
+
+It implements the ext-idle-notify-v1 protocol and supports:
+.IP \[bu] 2
+DBus \fIloginctl\fR lock/unlock and before-sleep hooks
+.IP \[bu] 2
+DBus inhibit interface (used by Firefox, Steam, etc.)
+
+.SH USAGE
+Hypridle should ideally be launched automatically after login. This can be done
+via your compositor or systemd.
+
+To launch from Hyprland, add the following to your \fIhyprland.conf\fR:
+.PP
+.RS
+exec-once = hypridle
+.RE
+
+To run hypridle using systemd:
+.PP
+.RS
+systemctl --user enable --now hypridle.service
+.RE
+
+.SH OPTIONS
+.TP
+\fB\-c\fR, \fB\-\-config\fR \fIconfig_path\fR
+Specify an alternate configuration file. Defaults to:
+\fB${XDG_CONFIG_HOME}/hypr/hypridle.conf\fR
+.TP
+\fB\-q\fR, \fB\-\-quiet\fR
+Suppress output.
+.TP
+\fB\-v\fR, \fB\-\-verbose\fR
+Enable verbose output for debugging.
+
+.SH AUTHOR
+Maintained by Carl Keinath <carl.keinath@gmail.com>
+
+.SH SEE ALSO
+.BR hyprland (1),
+.BR systemd (1)
+
+.SH COPYRIGHT
+MIT License. See the project repository for more information.

@@ -1,0 +1,32 @@
+Source: hypridle
+Section: x11
+Maintainer: Debian Hyprland Maintainers <team+hyprland@tracker.debian.org>
+Uploaders:
+ Carl Keinath <carl.keinath@gmail.com>,
+ Chow Loong Jin <hyperair@debian.org>,
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ pkgconf,
+ libwayland-dev,
+ wayland-protocols,
+ hyprland-protocols,
+ libhyprlang-dev (>= 0.6.0),
+ libhyprutils-dev (>= 0.2.0),
+ libsdbus-c++-dev (>= 2.0.0),
+ hyprwayland-scanner (>= 0.4.4),
+Standards-Version: 4.7.3
+Homepage: https://github.com/hyprwm/hypridle
+Vcs-Browser: https://salsa.debian.org/hyprland-team/hypridle
+Vcs-Git: https://salsa.debian.org/hyprland-team/hypridle.git
+
+Package: hypridle
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ wayland-protocols,
+Description: Idle daemon for Hyprland
+ Idle daemon for Hyprland implementing ext-idle-notify-v1 protocol.
+ Provides DBus loginctl lock/unlock, before-sleep hooks, and inhibit support.

@@ -1,0 +1,26 @@
+hypridle (0.1.8-1~bpo13+1) trixie-backports; urgency=medium
+
+  * Rebuild for trixie-backports.
+
+ -- Alex Myczko <tar@debian.org>  Mon, 24 Aug 2026 14:38:58 +0000
+
+hypridle (0.1.8-1) unstable; urgency=medium
+
+  * New upstream version 0.1.8
+
+ -- Chow Loong Jin <hyperair@debian.org>  Wed, 29 Jul 2026 11:20:30 +0800
+
+hypridle (0.1.7-2) unstable; urgency=medium
+
+  * d/control:
+    - add team members to Uploaders
+    - Bump S-V to 4.7.3, drop priority: optional and RRR
+    - remove dep on g++14 (Closes: #1129509)
+
+ -- Carl Keinath <carl.keinath@gmail.com>  Mon, 02 Mar 2026 22:11:55 +0100
+
+hypridle (0.1.7-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1099510)
+
+ -- Carl Keinath <carl.keinath@gmail.com>  Thu, 18 Sep 2025 15:37:52 +0200
