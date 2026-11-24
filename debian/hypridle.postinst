@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+# Older Parrot revisions enabled hypridle.service automatically. That conflicts
+# with the Hyprland-managed startup path, so remove only the legacy enablement.
+if [ "$1" = configure ] && [ -n "${2:-}" ] && [ -z "${DPKG_ROOT:-}" ] &&
+   dpkg --compare-versions "$2" lt 0.1.8-1parrot2; then
+    deb-systemd-helper --user disable hypridle.service >/dev/null || true
+fi
+
+#DEBHELPER#
+
+exit 0

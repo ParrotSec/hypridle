@@ -1,3 +1,10 @@
+hypridle (0.1.8-1parrot2) echo; urgency=medium
+
+  * Do not enable hypridle.service from the package postinst; Parrot
+    Hyprland starts the idle daemon from its configuration.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Tue, 24 Nov 2026 16:39:52 +0100
+
 hypridle (0.1.8-1parrot1) echo; urgency=medium
 
   * Non-maintainer upload.

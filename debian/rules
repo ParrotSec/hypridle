@@ -8,3 +8,6 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 override_dh_clean:
 	rm -rf protocols
 	dh_clean
+
+override_dh_installsystemduser:
+	dh_installsystemduser --no-enable
